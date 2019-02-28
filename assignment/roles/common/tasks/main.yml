@@ -1,6 +1,14 @@
 ---
 - name: Install the helpful packages
   yum:
-    name: htop curl mc netstat lsof netcat nmap iotop
+    name:
+      - htop
+      - curl
+      - mc
+      - netstat
+      - lsof
+      - netcat
+      - nmap
+      - iotop
     state: present
   become: yes
