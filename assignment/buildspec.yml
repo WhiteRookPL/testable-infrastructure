@@ -13,7 +13,7 @@ phases:
   build:
     commands:
       - echo "Provisioning, building and testing our AMI..."
-      - ./packer build -var "aws_region=eu-central-1" -var "source_ami=ami-dd3c0f36" builder.json
+      - ./packer build -var "aws_region=eu-central-1" -var "source_ami=ami-dd3c0f36" -var "aws_security_group_id=sg-0f3520baa52cf3841" builder.json
 
   post_build:
     commands:

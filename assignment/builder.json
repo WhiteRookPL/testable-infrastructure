@@ -5,7 +5,9 @@
 
     "aws_region": "",
 
-    "source_ami": ""
+    "source_ami": "",
+
+    "aws_security_group_id": ""
   },
 
   "builders": [
@@ -23,6 +25,8 @@
 
       "ami_name": "baked-ami-{{ timestamp }}",
       "ami_description": "Base AMI - Base for all components used in our project.",
+
+      "security_group_id": "{{ aws_security_group_id }}",
 
       "tags": {
         "App": "base-ami",
