@@ -2,8 +2,22 @@ require 'spec_helper'
 
 # PACKAGES
 
-describe package('htop') do
-  it { should be_installed }
+packages = [
+  "htop",
+  "curl",
+  "mc",
+  "net-tools",
+  "yum-utils",
+  "lsof",
+  "nc",
+  "nmap",
+  "iotop"
+]
+
+packages.each do |package_name|
+  describe package(package_name) do
+    it { should be_installed }
+  end
 end
 
 # NTPD
