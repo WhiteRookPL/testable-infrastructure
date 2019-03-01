@@ -34,11 +34,13 @@ describe timezone do
   it { should be_utc }
 end
 
-# HTTPD
+# SSH
 
-describe port(80) do
+describe port(22) do
   it { should be_listening }
 end
+
+# HTTPD
 
 describe service('httpd') do
   it { should be_enabled }
