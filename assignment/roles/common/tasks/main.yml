@@ -43,6 +43,13 @@
 
 # Install, enable and configure httpd.
 
+- name: Whitelist HTTP ports in the firewall
+  firewalld:
+    zone: dmz
+    service: http
+    permanent: yes
+    state: enabled
+
 - name: Ensure HTTPD-related packages are installed.
   package:
     name: httpd

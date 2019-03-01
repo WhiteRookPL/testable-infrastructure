@@ -11,7 +11,7 @@ module Serverspec::Type
     end
 
     def utc?
-      get_tz.include? "UTC"
+      get_tz.stdout.include? "UTC"
     end
 
     private
