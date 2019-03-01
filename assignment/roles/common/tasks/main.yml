@@ -43,12 +43,20 @@
 
 # Install, enable and configure httpd.
 
-- name: Whitelist HTTP ports in the firewall
-  firewalld:
-    zone: dmz
-    service: http
-    permanent: yes
-    state: enabled
+- name: Disable SELinux
+  selinux:
+    state: disabled
+
+- name: Be sure firewall is disabled
+  systemd:
+    name: firewalld
+    enabled: false
+
+- name: Be sure firewall is stopped
+  systemd:
+    name: firewalld
+    state: stopped
+  ignore_errors: yes
 
 - name: Ensure HTTPD-related packages are installed.
   package:
