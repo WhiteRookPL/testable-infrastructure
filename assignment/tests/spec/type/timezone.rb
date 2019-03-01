@@ -4,16 +4,20 @@ module Serverspec
     class TimeZone < Base
 
       def initialize
-        @timezone
+        @name = "Timezone"
+      end
+
+      def content
+        get_tz
+      end
+
+      def utc?
+        get_tz == "UTC"
       end
 
       private
       def get_tz
         @runner.run_command('date +"%Z %z"')
-      end
-
-      def utc?
-        get_tz == "UTC"
       end
 
     end
