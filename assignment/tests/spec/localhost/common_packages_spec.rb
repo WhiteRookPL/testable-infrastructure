@@ -9,7 +9,6 @@ packages = [
   "net-tools",
   "yum-utils",
   "lsof",
-  "nmap-cat",
   "nmap",
   "iotop"
 ]
