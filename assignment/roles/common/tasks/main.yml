@@ -10,6 +10,7 @@
       - lsof
       - nmap
       - iotop
+      - ss
     state: present
 
 # Install and enable ntpd in order to setup date with UTC.
