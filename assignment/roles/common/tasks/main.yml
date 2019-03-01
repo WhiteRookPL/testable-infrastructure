@@ -8,7 +8,7 @@
       - net-tools
       - yum-utils
       - lsof
-      - nc
+      - nmap-cat
       - nmap
       - iotop
     state: present
@@ -48,9 +48,9 @@
     name: httpd
     state: present
 
-- name: Ensure NTP is running and enabled as configured.
+- name: Ensure HTTPD is running and enabled as configured.
   service:
-    name: ntpd
+    name: httpd
     state: started
     enabled: true
 
