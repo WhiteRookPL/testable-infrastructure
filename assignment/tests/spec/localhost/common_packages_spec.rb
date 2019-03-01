@@ -34,12 +34,6 @@ describe timezone do
   it { should be_utc }
 end
 
-# SSH
-
-describe port(22) do
-  it { should be_listening }
-end
-
 # HTTPD
 
 describe service('httpd') do
