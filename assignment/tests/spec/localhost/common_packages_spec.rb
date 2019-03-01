@@ -10,7 +10,8 @@ packages = [
   "yum-utils",
   "lsof",
   "nmap",
-  "iotop"
+  "iotop",
+  "iproute"
 ]
 
 packages.each do |package_name|
